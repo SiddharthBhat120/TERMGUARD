@@ -1,0 +1,46 @@
+{
+  "document": "offer_startup_bond.pdf",
+  "kind": "offer_letter",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "Your total Cost to Company (CTC) will be Rs. 6,00,000 per an",
+      "labels": [
+        "O01_variable_pay"
+      ]
+    },
+    {
+      "clause_start": "Your date of joining will be 1 December 2026 at our Bengalur",
+      "labels": []
+    },
+    {
+      "clause_start": "You will be required to serve the company for a minimum peri",
+      "labels": [
+        "O02_bond"
+      ]
+    },
+    {
+      "clause_start": "You will be on probation for six months, which may be extend",
+      "labels": [
+        "O05_probation"
+      ]
+    },
+    {
+      "clause_start": "After confirmation, either party may terminate employment by",
+      "labels": [
+        "O03_long_notice",
+        "O04_buyout"
+      ]
+    },
+    {
+      "clause_start": "You will be entitled to 18 days of paid leave and 10 public ",
+      "labels": []
+    },
+    {
+      "clause_start": "Your salary details are strictly confidential and must not b",
+      "labels": [
+        "O11_salary_confidential"
+      ]
+    }
+  ]
+}

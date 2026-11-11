@@ -1,0 +1,337 @@
+# TermGuard red-flag checklist: rental agreements (India, general).
+# Rules differ by state (and by Rent Control Act / Model Tenancy Act adoption).
+# This list gives information, not legal advice.
+#
+# Fields
+#   triggers  regex patterns (case-insensitive). If any match, the clause is a candidate.
+#   escalate  each match raises the risk one level (low -> medium -> high).
+#   soften    if any match, the rule engine treats the clause as fair and skips it.
+doc_type: rental
+title: Rental agreement checklist
+disclaimer: >-
+  TermGuard gives general information, not legal advice. Tenancy rules differ from
+  state to state in India. For a dispute, eviction notice or a large deposit, talk to a lawyer
+  or your state's rent authority.
+
+items:
+  - id: R01_deposit_high
+    name: Large security deposit
+    look_for: Deposit equal to three or more months of rent.
+    why: A big deposit locks up your money and is hard to get back if there is a dispute.
+    risk: medium
+    question: Can the deposit be reduced to two months of rent, as many states now suggest?
+    example: The Tenant shall pay a security deposit equal to six months' rent.
+    explanation: >-
+      This clause asks for a deposit worth several months of rent. That is a lot of money to
+      leave with the owner. Some states, under the Model Tenancy Act, cap it at two months.
+    explanation_hi: >-
+      यह शर्त कई महीनों के किराए जितनी जमा राशि मांगती है। यह मालिक के पास रखने के लिए बहुत बड़ी रकम है।
+      मॉडल टेनेंसी एक्ट अपनाने वाले कुछ राज्यों में इसकी सीमा दो महीने है।
+    explanation_kn: >-
+      ಈ ಷರತ್ತು ಹಲವು ತಿಂಗಳ ಬಾಡಿಗೆಯಷ್ಟು ಠೇವಣಿ ಕೇಳುತ್ತದೆ. ಮಾಲೀಕರ ಬಳಿ ಇಡಲು ಇದು ದೊಡ್ಡ ಮೊತ್ತ.
+      ಮಾದರಿ ಬಾಡಿಗೆ ಕಾಯ್ದೆ ಅಳವಡಿಸಿಕೊಂಡ ಕೆಲವು ರಾಜ್ಯಗಳಲ್ಲಿ ಇದಕ್ಕೆ ಎರಡು ತಿಂಗಳ ಮಿತಿ ಇದೆ.
+    triggers:
+      - '(deposit|advance)[^.]{0,90}?\b([3-9]|1[0-2]|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*(\(\w+\)\s*)?months?\W{0,2}s?\s*(of\s*)?(rent|licen[cs]e fee)'
+      - '\b([3-9]|1[0-2]|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*(\(\w+\)\s*)?months?\W{0,2}s?\s*(rent\s*)?(as\s*)?(security\s*)?(deposit|advance)'
+    escalate:
+      - '\b([6-9]|1[0-2]|six|seven|eight|nine|ten|eleven|twelve)\s*(\(\w+\)\s*)?months?'
+
+  - id: R02_deposit_forfeit
+    name: Deposit can be kept or not refunded
+    look_for: Words like forfeit, non-refundable, or the owner keeping the deposit at their discretion.
+    why: You may lose the whole deposit for small reasons, or for no stated reason.
+    risk: high
+    question: In which exact cases can you keep the deposit, and can you list them in writing?
+    example: The Licensor may forfeit the deposit at his sole discretion.
+    explanation: >-
+      This clause lets the owner keep some or all of your deposit. The reasons are not clear or
+      are decided only by the owner. Ask for a fixed list of reasons and receipts for any cut.
+    explanation_hi: >-
+      यह शर्त मालिक को आपकी जमा राशि का कुछ या पूरा हिस्सा रखने देती है। कारण साफ नहीं हैं या केवल मालिक तय करता है।
+      कारणों की एक तय सूची और हर कटौती की रसीद मांगें।
+    explanation_kn: >-
+      ಈ ಷರತ್ತು ನಿಮ್ಮ ಠೇವಣಿಯ ಕೆಲವು ಅಥವಾ ಸಂಪೂರ್ಣ ಭಾಗವನ್ನು ಮಾಲೀಕರು ಇಟ್ಟುಕೊಳ್ಳಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಕಾರಣಗಳು ಸ್ಪಷ್ಟವಾಗಿಲ್ಲ
+      ಅಥವಾ ಮಾಲೀಕರೇ ನಿರ್ಧರಿಸುತ್ತಾರೆ. ಕಾರಣಗಳ ನಿಗದಿತ ಪಟ್ಟಿ ಮತ್ತು ಪ್ರತಿ ಕಡಿತಕ್ಕೆ ರಸೀದಿ ಕೇಳಿ.
+    triggers:
+      - 'forfeit'
+      - '(retain|withhold|keep)[^.]{0,60}deposit'
+      - '(deposit|advance)[^.]{0,80}(non[- ]?refundable|not be refunded|shall not be returned)'
+      - 'deposit[^.]{0,100}(sole|absolute) discretion'
+    escalate: []
+
+  - id: R03_vague_deductions
+    name: Open-ended deductions from deposit
+    look_for: Deductions for "any" charges, or amounts decided by the owner alone.
+    why: Without limits, small or made-up charges can eat most of your deposit.
+    risk: medium
+    question: Can we write that only unpaid rent, unpaid bills and real damage (with bills) can be deducted?
+    example: The Owner may deduct any amount he deems fit from the deposit.
+    explanation: >-
+      The owner can cut money from your deposit for charges that are not defined. Normal wear and
+      tear should not be charged. Ask for deductions only with bills or photos as proof.
+    explanation_hi: >-
+      मालिक बिना तय किए गए खर्चों के लिए आपकी जमा राशि से पैसे काट सकता है। सामान्य घिसावट का पैसा नहीं लेना चाहिए।
+      कटौती केवल बिल या फ़ोटो के सबूत के साथ हो, यह लिखवाएं।
+    explanation_kn: >-
+      ವ್ಯಾಖ್ಯಾನಿಸದ ಶುಲ್ಕಗಳಿಗಾಗಿ ಮಾಲೀಕರು ನಿಮ್ಮ ಠೇವಣಿಯಿಂದ ಹಣ ಕಡಿತ ಮಾಡಬಹುದು. ಸಾಮಾನ್ಯ ಸವೆತಕ್ಕೆ ಶುಲ್ಕ ವಿಧಿಸಬಾರದು.
+      ಬಿಲ್ ಅಥವಾ ಫೋಟೋ ಪುರಾವೆಯೊಂದಿಗೆ ಮಾತ್ರ ಕಡಿತ ಮಾಡಬೇಕು ಎಂದು ಬರೆಸಿ.
+    triggers:
+      - 'deduct[^.]{0,80}\b(any|all|such)\b( other)?\s*(amount|charges?|dues|expenses|sums?)'
+      - '(as|which)[^.]{0,20}(deem(s|ed)?|think(s)?|determine[sd]?)\s*(fit|appropriate|necessary)'
+      - 'deduct[^.]{0,80}wear and tear'
+    soften:
+      - '(except|excluding|other than|beyond)\s*(for\s*)?normal wear and tear'
+
+  - id: R04_lock_in
+    name: Lock-in period
+    look_for: A period during which you cannot leave, or must pay rent anyway if you leave.
+    why: If your job or college changes, you may owe months of rent for a place you left.
+    risk: medium
+    question: If I must leave during the lock-in, can I give one month's notice instead of paying the balance?
+    example: There shall be a lock-in period of 11 months.
+    explanation: >-
+      For a fixed time you cannot leave without a penalty. If you leave early you may lose the
+      deposit or pay rent for the remaining months. Check this matches how long you will stay.
+    explanation_hi: >-
+      एक तय समय तक आप बिना जुर्माने के घर नहीं छोड़ सकते। जल्दी छोड़ने पर जमा राशि जा सकती है या बाकी महीनों का किराया देना पड़ सकता है।
+      देखें कि यह आपके रहने की अवधि से मेल खाता है।
+    explanation_kn: >-
+      ನಿಗದಿತ ಅವಧಿಯವರೆಗೆ ದಂಡವಿಲ್ಲದೆ ನೀವು ಮನೆ ಬಿಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಬೇಗ ಬಿಟ್ಟರೆ ಠೇವಣಿ ಕಳೆದುಕೊಳ್ಳಬಹುದು ಅಥವಾ ಉಳಿದ
+      ತಿಂಗಳುಗಳ ಬಾಡಿಗೆ ಕಟ್ಟಬೇಕಾಗಬಹುದು. ನೀವು ಎಷ್ಟು ಕಾಲ ಇರುತ್ತೀರಿ ಎಂಬುದಕ್ಕೆ ಇದು ಹೊಂದುತ್ತದೆಯೇ ನೋಡಿ.
+    triggers:
+      - 'lock[- ]?in'
+      - 'minimum (period|stay|tenure|term) of'
+      - 'shall not (vacate|terminate)[^.]{0,60}(before|within|during|prior to)'
+      - '(neither party|no party)[^.]{0,30}(shall|may|can)\s*(terminate|vacate)[^.]{0,60}(before|within|during|first)'
+    escalate:
+      - '(forfeit|entire|full|balance|remaining|unexpired)[^.]{0,60}(rent|deposit|period)'
+
+  - id: R05_long_notice
+    name: Long notice period for you
+    look_for: Two months or more (60+ days) of notice before you can leave.
+    why: A long notice period makes moving for a new job or course expensive.
+    risk: medium
+    question: Can the notice period be one month for both sides?
+    example: The Tenant shall give three months' written notice.
+    explanation: >-
+      You must tell the owner long before you leave. If you cannot, you may have to pay rent for
+      the notice time. One month is common. Also check the owner's notice is the same as yours.
+    explanation_hi: >-
+      घर छोड़ने से बहुत पहले मालिक को बताना होगा। ऐसा न करने पर नोटिस अवधि का किराया देना पड़ सकता है।
+      आमतौर पर एक महीना होता है। देखें कि मालिक का नोटिस भी उतना ही हो।
+    explanation_kn: >-
+      ಮನೆ ಬಿಡುವ ಬಹಳ ಮುಂಚೆಯೇ ಮಾಲೀಕರಿಗೆ ತಿಳಿಸಬೇಕು. ಇಲ್ಲದಿದ್ದರೆ ನೋಟಿಸ್ ಅವಧಿಯ ಬಾಡಿಗೆ ಕಟ್ಟಬೇಕಾಗಬಹುದು.
+      ಸಾಮಾನ್ಯವಾಗಿ ಒಂದು ತಿಂಗಳು ಇರುತ್ತದೆ. ಮಾಲೀಕರ ನೋಟಿಸ್ ಅವಧಿಯೂ ಅಷ್ಟೇ ಇದೆಯೇ ನೋಡಿ.
+    triggers:
+      - '\b([2-6]|two|three|four|five|six)\s*(\(\w+\)\s*)?(calendar\s*)?months?\W{0,2}s?\s*(prior\s*|advance\s*|written\s*)*notice'
+      - '\b([6-9]\d|1\d\d)\s*(\(\w+\)\s*)?days?\W{0,2}s?\s*(prior\s*|advance\s*|written\s*)*notice'
+      - 'notice (period )?of\s*(not less than\s*)?\b([2-6]|two|three|four|five|six)\s*(\(\w+\)\s*)?months?'
+      - '(inform|intimate|notify)[^.]{0,40}\b(([6-9]\d|1\d\d)\s*days?|([2-6]|two|three|four|five|six)\s*months?)\s*(in advance|prior|before)'
+    require:
+      - 'vacat|leav|terminat|quit|\bend\b|exit|\bgive\b|inform|shift'
+    escalate:
+      - '\b([3-6]|three|four|five|six)\s*(\(\w+\)\s*)?months?|\b(9\d|1\d\d)\s*days'
+
+  - id: R06_eviction
+    name: Eviction without fair notice
+    look_for: The owner can end the agreement at any time, without reason, or ask you to leave within days.
+    why: You could lose your home with almost no time to find another.
+    risk: high
+    question: Can the owner's notice be the same as mine, with written reasons and at least one month's time?
+    example: The Owner may terminate this agreement at any time without assigning any reason.
+    explanation: >-
+      This clause lets the owner make you leave very quickly or without a reason. In most states the
+      owner must follow a legal process to evict a tenant. Ask for equal notice on both sides.
+    explanation_hi: >-
+      यह शर्त मालिक को आपको बहुत जल्दी या बिना कारण घर खाली कराने देती है। ज़्यादातर राज्यों में किरायेदार को निकालने के
+      लिए मालिक को कानूनी प्रक्रिया अपनानी होती है। दोनों तरफ बराबर नोटिस मांगें।
+    explanation_kn: >-
+      ಈ ಷರತ್ತು ಮಾಲೀಕರಿಗೆ ನಿಮ್ಮನ್ನು ಬೇಗ ಅಥವಾ ಕಾರಣವಿಲ್ಲದೆ ಮನೆ ಖಾಲಿ ಮಾಡಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಹೆಚ್ಚಿನ ರಾಜ್ಯಗಳಲ್ಲಿ
+      ಬಾಡಿಗೆದಾರರನ್ನು ಹೊರಹಾಕಲು ಮಾಲೀಕರು ಕಾನೂನು ಪ್ರಕ್ರಿಯೆ ಪಾಲಿಸಬೇಕು. ಎರಡೂ ಕಡೆ ಸಮಾನ ನೋಟಿಸ್ ಕೇಳಿ.
+    triggers:
+      - '(landlord|owner|lessor|licensor)[^.]{0,100}(terminate|vacate|evict|cancel)[^.]{0,80}(any time|without (any )?(prior )?(notice|reason|assigning))'
+      - 'without assigning any reason'
+      - '(evict|vacate|remove)[^.]{0,60}(immediately|forthwith|within\s*(24|48|\d{1,2})\s*hours|within\s*([1-7]|one|two|three|seven)\s*days?)'
+      - '(cut[- ]?off|disconnect)[^.]{0,40}(water|electricity|power|supply)'
+      - '(change|break)[^.]{0,20}locks?'
+    escalate: []
+
+  - id: R07_rent_increase
+    name: Rent increase terms
+    look_for: How and when rent goes up, especially large or open-ended increases.
+    why: An unclear increase can make the flat unaffordable halfway through.
+    risk: low
+    question: Can we fix the increase at a set percentage, only once a year, with written notice?
+    example: The rent shall be increased by 10% every 11 months.
+    explanation: >-
+      This clause explains how your rent will go up. Check the percentage and how often. If the
+      owner can raise it whenever they want, you cannot plan your budget.
+    explanation_hi: >-
+      यह शर्त बताती है कि आपका किराया कैसे बढ़ेगा। प्रतिशत और कितनी बार बढ़ेगा, यह देखें। अगर मालिक जब चाहे बढ़ा सकता है,
+      तो आप अपना बजट नहीं बना पाएंगे।
+    explanation_kn: >-
+      ನಿಮ್ಮ ಬಾಡಿಗೆ ಹೇಗೆ ಹೆಚ್ಚಾಗುತ್ತದೆ ಎಂದು ಈ ಷರತ್ತು ಹೇಳುತ್ತದೆ. ಶೇಕಡಾವಾರು ಮತ್ತು ಎಷ್ಟು ಬಾರಿ ಎಂದು ನೋಡಿ. ಮಾಲೀಕರು
+      ಬೇಕಾದಾಗ ಹೆಚ್ಚಿಸಬಹುದಾದರೆ ನಿಮ್ಮ ಬಜೆಟ್ ಯೋಜಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.
+    triggers:
+      - '(rent|licen[cs]e fee)[^.]{0,80}(increase|enhance|escalat|revis|hike)'
+      - '(increase|enhance|escalat|revis|hike)[^.]{0,60}(rent|licen[cs]e fee)'
+    escalate:
+      - '\b(1[0-9]|[2-9][0-9])\s*(%|per\s?cent)'
+      - '(sole|absolute) discretion|as (decided|determined|fixed) by the (landlord|owner|lessor|licensor)|at any time|from time to time|whenever'
+
+  - id: R08_repairs_on_tenant
+    name: All repairs put on you
+    look_for: You pay for all, major or structural repairs.
+    why: Big repairs like plumbing, wiring or leakage are usually the owner's job.
+    risk: medium
+    question: Can we agree you pay only for minor repairs and damage you cause, and the owner pays for structural and major repairs?
+    example: All repairs of whatever nature shall be done by the Tenant at his own cost.
+    explanation: >-
+      This clause makes you pay for big repairs that are usually the owner's job. A common split is:
+      you handle small daily repairs, the owner handles structure, wiring, plumbing and leaks.
+    explanation_hi: >-
+      यह शर्त आपसे बड़ी मरम्मत का खर्च करवाती है, जो आमतौर पर मालिक का काम है। आम बंटवारा: छोटी रोज़ की मरम्मत आप करें,
+      ढांचा, वायरिंग, पाइप और लीकेज मालिक देखे।
+    explanation_kn: >-
+      ಸಾಮಾನ್ಯವಾಗಿ ಮಾಲೀಕರ ಕೆಲಸವಾದ ದೊಡ್ಡ ದುರಸ್ತಿಗಳ ವೆಚ್ಚವನ್ನು ಈ ಷರತ್ತು ನಿಮ್ಮ ಮೇಲೆ ಹಾಕುತ್ತದೆ. ಸಾಮಾನ್ಯ ಹಂಚಿಕೆ:
+      ಸಣ್ಣ ದೈನಂದಿನ ದುರಸ್ತಿ ನಿಮ್ಮದು, ಕಟ್ಟಡ, ವೈರಿಂಗ್, ಪೈಪ್ ಮತ್ತು ಸೋರಿಕೆ ಮಾಲೀಕರದು.
+    triggers:
+      - '\b(all|any|major|structural)\b[^.]{0,30}(repairs?|maintenance)[^.]{0,100}(tenant|lessee|licensee)'
+      - '(tenant|lessee|licensee)[^.]{0,100}\b(all|any|major|structural)\b[^.]{0,30}(repairs?|maintenance)'
+      - 'repairs? of (whatever|any) (nature|kind)'
+    soften:
+      - '(landlord|owner|lessor|licensor)[^.]{0,60}(major|structural)'
+
+  - id: R09_usage_restrictions
+    name: Limits on visitors or daily life
+    look_for: Rules on guests, overnight stays, cooking, pets, or who can live there.
+    why: Strict rules can lead to fines or eviction for normal living.
+    risk: low
+    question: Can you write exactly what is allowed (guests, cooking, timings) so there is no dispute later?
+    example: No visitors shall be allowed after 9 PM.
+    explanation: >-
+      This clause limits how you can live in the home, such as guests, food or timings. Make sure
+      you can live with these rules. Check if breaking them leads to a fine or eviction.
+    explanation_hi: >-
+      यह शर्त घर में रहने के तरीके पर रोक लगाती है, जैसे मेहमान, खाना या समय। पक्का करें कि आप इन नियमों के साथ रह सकते हैं।
+      देखें कि नियम तोड़ने पर जुर्माना या घर खाली करना तो नहीं।
+    explanation_kn: >-
+      ಅತಿಥಿಗಳು, ಆಹಾರ ಅಥವಾ ಸಮಯದಂತಹ ವಿಷಯಗಳಲ್ಲಿ ನೀವು ಹೇಗೆ ಬದುಕಬೇಕು ಎಂಬುದನ್ನು ಈ ಷರತ್ತು ಮಿತಿಗೊಳಿಸುತ್ತದೆ. ಈ ನಿಯಮಗಳೊಂದಿಗೆ
+      ಬದುಕಬಹುದೇ ಎಂದು ಖಚಿತಪಡಿಸಿ. ಉಲ್ಲಂಘಿಸಿದರೆ ದಂಡ ಅಥವಾ ಹೊರಹಾಕುವಿಕೆ ಇದೆಯೇ ನೋಡಿ.
+    triggers:
+      - '(guests?|visitors?|friends|relatives)[^.]{0,80}(not (be )?(allowed|permitted)|prohibited|restricted|after\s*\d)'
+      - '\b(no|not)\b[^.]{0,40}(pets|non[- ]?veg|cooking|parties|alcohol)'
+      - 'bachelors?|opposite (sex|gender)'
+      - 'overnight'
+    escalate:
+      - '(fine|penalty|terminate|evict)'
+
+  - id: R10_exit_charges
+    name: Painting or exit charges
+    look_for: Fixed painting, cleaning or exit fees when you leave.
+    why: These can quietly cost you a large part of the deposit.
+    risk: medium
+    question: Can painting or cleaning be charged only if there is real damage, with a bill?
+    example: One month's rent shall be deducted towards painting charges.
+    explanation: >-
+      You may be charged for painting or cleaning when you move out, even if the home is fine.
+      Ask for these charges only when there is real damage, shown with a bill.
+    explanation_hi: >-
+      घर छोड़ते समय पेंटिंग या सफाई का पैसा लिया जा सकता है, चाहे घर ठीक हो। ये खर्च केवल असली नुकसान होने पर,
+      बिल के साथ लेने को कहें।
+    explanation_kn: >-
+      ಮನೆ ಬಿಡುವಾಗ, ಮನೆ ಚೆನ್ನಾಗಿದ್ದರೂ ಬಣ್ಣ ಅಥವಾ ಸ್ವಚ್ಛತೆ ಶುಲ್ಕ ವಿಧಿಸಬಹುದು. ನಿಜವಾದ ಹಾನಿ ಇದ್ದಾಗ ಮಾತ್ರ, ಬಿಲ್‌ನೊಂದಿಗೆ
+      ಈ ಶುಲ್ಕ ಕೇಳಲು ಹೇಳಿ.
+    triggers:
+      - '(painting|repaint|white\s?wash)[^.]{0,80}(charges?|cost|deduct|tenant|lessee|licensee|vacat)'
+      - '(cleaning|exit|vacating)\s*(charges?|fees?)'
+      - '(one|1|full)\s*months?\W{0,2}s?\s*rent[^.]{0,60}(painting|cleaning)'
+
+  - id: R11_entry_without_notice
+    name: Owner can enter without notice
+    look_for: The owner may enter or inspect the home at any time or without notice.
+    why: You have a right to privacy in the home you pay for.
+    risk: medium
+    question: Can the owner give at least 24 hours' notice before visiting, except in emergencies?
+    example: The Owner shall have the right to enter the premises at any time.
+    explanation: >-
+      The owner can come into your home whenever they want. This affects your privacy and safety.
+      Ask for advance notice and a reasonable time, except in an emergency.
+    explanation_hi: >-
+      मालिक जब चाहे आपके घर में आ सकता है। इससे आपकी निजता और सुरक्षा पर असर पड़ता है। आपात स्थिति को छोड़कर, पहले से
+      सूचना और सही समय मांगें।
+    explanation_kn: >-
+      ಮಾಲೀಕರು ಬೇಕಾದಾಗ ನಿಮ್ಮ ಮನೆಗೆ ಬರಬಹುದು. ಇದು ನಿಮ್ಮ ಖಾಸಗಿತನ ಮತ್ತು ಸುರಕ್ಷತೆಗೆ ಧಕ್ಕೆ. ತುರ್ತು ಸಂದರ್ಭ ಹೊರತುಪಡಿಸಿ,
+      ಮುಂಚಿತ ಸೂಚನೆ ಮತ್ತು ಸೂಕ್ತ ಸಮಯ ಕೇಳಿ.
+    triggers:
+      - '(enter|inspect|visit)[^.]{0,80}(any time|anytime|without (any )?(prior )?(notice|intimation|permission))'
+      - '(landlord|owner|lessor|licensor)[^.]{0,40}(right|liberty|free|entitled) to (enter|inspect)'
+    soften:
+      - '(prior|advance|reasonable) (written )?(notice|intimation)|\b24 hours'
+
+  - id: R12_late_fee
+    name: Late payment penalty
+    look_for: Fines or interest when rent is late, especially per-day charges.
+    why: Penalties can grow fast and become a reason to keep your deposit.
+    risk: medium
+    question: Is there a grace period, and can the late fee be a small fixed amount?
+    example: A penalty of Rs. 500 per day shall be levied for delayed payment.
+    explanation: >-
+      If rent is late you pay extra. Check how much and from which day. A per-day fine can add up
+      quickly. Ask for a few days of grace period.
+    explanation_hi: >-
+      किराया देर से देने पर अतिरिक्त पैसा देना होगा। कितना और किस दिन से, यह देखें। रोज़ का जुर्माना जल्दी बढ़ जाता है।
+      कुछ दिनों की छूट अवधि मांगें।
+    explanation_kn: >-
+      ಬಾಡಿಗೆ ತಡವಾದರೆ ಹೆಚ್ಚುವರಿ ಹಣ ಕಟ್ಟಬೇಕು. ಎಷ್ಟು ಮತ್ತು ಯಾವ ದಿನದಿಂದ ಎಂದು ನೋಡಿ. ದಿನದ ದಂಡ ಬೇಗ ಹೆಚ್ಚಾಗುತ್ತದೆ.
+      ಕೆಲವು ದಿನಗಳ ವಿನಾಯಿತಿ ಅವಧಿ ಕೇಳಿ.
+    triggers:
+      - '(late|delay(ed)?|belated)\s*(payment)?[^.]{0,60}(fee|fine|penalty|interest)'
+      - '(penalty|fine|interest)[^.]{0,60}(late|delay(ed)?|belated)'
+    escalate:
+      - 'per day|each day|every day|\b(1[5-9]|[2-9]\d)\s*(%|per\s?cent)'
+
+expected:
+  - id: E_R01_deposit_return
+    name: When the deposit will be returned
+    why: Without a deadline, the owner can delay returning your deposit for months.
+    question: Within how many days after I move out will the deposit be returned?
+    present:
+      - '(refund|return|repa(y|id)|refunded|returned)[^.]{0,140}(within|not later than|no later than)'
+      - 'deposit[^.]{0,140}within\s*(\d+|\w+)\s*(\(\d+\)\s*)?(days|weeks|months)'
+  - id: E_R02_notice
+    name: Notice period for leaving
+    why: Both sides should know how much warning to give before the agreement ends.
+    question: How many days of notice do we each need to give?
+    present:
+      - '\bnotice\b'
+  - id: E_R03_rent_due
+    name: Rent amount and due date
+    why: A clear amount and due date prevents late-fee disputes.
+    question: What is the exact rent and by which date each month should it be paid?
+    present:
+      - '(rent|licen[cs]e fee)[^.]{0,140}(on or before|by the|before the|\b\d{1,2}(st|nd|rd|th)?\s*(day|of))'
+  - id: E_R04_repairs
+    name: Who pays for repairs
+    why: Repair costs are one of the most common tenancy disputes.
+    question: Which repairs will you handle and which will I handle?
+    present:
+      - '\brepair|\bmaintenance of'
+  - id: E_R05_receipts
+    name: Rent receipts
+    why: Receipts prove you paid and are needed for HRA tax claims.
+    question: Will you give a receipt (or bank transfer record) for every payment?
+    present:
+      - 'receipt'
+  - id: E_R06_registration
+    name: Stamp duty and registration
+    why: Unregistered or unstamped agreements can be weaker as evidence in a dispute.
+    question: Will this agreement be on stamp paper and registered, and who pays for it?
+    present:
+      - 'stamp (duty|paper)|registration|register(ed)?\b|e-stamp'
+  - id: E_R07_inventory
+    name: List of furniture and fittings
+    why: A written list protects you from being charged for items that were never there.
+    question: Can we attach a list (with photos) of furniture, fittings and their condition?
+    present:
+      - 'inventory|annexure|schedule\s*(of|[a-z]\b|\d)|furniture|fixtures|fittings'

@@ -1,0 +1,49 @@
+{
+  "document": "rental_mumbai_leave_licence.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "The Licensor grants the Licensee a licence to use Flat No. 3",
+      "labels": []
+    },
+    {
+      "clause_start": "The licence fee shall be Rs. 32,000 per month, payable in ad",
+      "labels": [
+        "R07_rent_increase"
+      ]
+    },
+    {
+      "clause_start": "The Licensee shall pay an interest-free refundable deposit o",
+      "labels": []
+    },
+    {
+      "clause_start": "This licence is for 11 months. Neither party shall terminate",
+      "labels": [
+        "R04_lock_in"
+      ]
+    },
+    {
+      "clause_start": "After the first six months, either party may terminate this ",
+      "labels": []
+    },
+    {
+      "clause_start": "If the licence fee is not paid by the due date, a penalty of",
+      "labels": [
+        "R12_late_fee"
+      ]
+    },
+    {
+      "clause_start": "The Licensor shall pay the society maintenance charges and p",
+      "labels": []
+    },
+    {
+      "clause_start": "Minor day-to-day repairs shall be done by the Licensee. Majo",
+      "labels": []
+    },
+    {
+      "clause_start": "This agreement shall be registered with the Sub-Registrar an",
+      "labels": []
+    }
+  ]
+}

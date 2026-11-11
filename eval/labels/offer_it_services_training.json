@@ -1,0 +1,46 @@
+{
+  "document": "offer_it_services_training.pdf",
+  "kind": "offer_letter",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "Your annual CTC will be Rs. 3,60,000. The detailed salary br",
+      "labels": []
+    },
+    {
+      "clause_start": "You will undergo a training programme of 12 weeks. You will ",
+      "labels": [
+        "O02_bond"
+      ]
+    },
+    {
+      "clause_start": "You may be transferred to any location or project in India o",
+      "labels": [
+        "O09_unilateral_change"
+      ]
+    },
+    {
+      "clause_start": "A relocation allowance of Rs. 25,000 will be paid on joining",
+      "labels": [
+        "O08_relocation_clawback"
+      ]
+    },
+    {
+      "clause_start": "You will be required to give two months' notice or pay salar",
+      "labels": [
+        "O03_long_notice",
+        "O04_buyout"
+      ]
+    },
+    {
+      "clause_start": "This offer is subject to satisfactory background verificatio",
+      "labels": [
+        "O10_offer_withdrawal"
+      ]
+    },
+    {
+      "clause_start": "The working hours are 9:00 AM to 6:00 PM, Monday to Friday, ",
+      "labels": []
+    }
+  ]
+}

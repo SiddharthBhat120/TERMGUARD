@@ -1,0 +1,12 @@
+services:
+  termguard:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - termguard-data:/data
+volumes:
+  termguard-data:

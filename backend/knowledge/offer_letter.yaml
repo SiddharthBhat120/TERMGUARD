@@ -1,0 +1,316 @@
+# TermGuard red-flag checklist: job offer letters (India, general).
+# Employment rules differ by state (Shops and Establishments Acts) and by job type.
+# This list gives information, not legal advice.
+doc_type: offer_letter
+title: Offer letter checklist
+disclaimer: >-
+  TermGuard gives general information, not legal advice. Employment rules differ by state and
+  by job type. Before signing a bond, or if an employer threatens recovery or legal action,
+  talk to a lawyer.
+
+items:
+  - id: O01_variable_pay
+    name: Large or uncertain variable pay
+    look_for: Variable, performance-linked or discretionary parts of the salary.
+    why: Your in-hand pay may be much lower than the CTC number you were told.
+    risk: medium
+    question: What was the actual variable payout percentage for this role last year, and how is it decided?
+    example: Variable pay of Rs. 2,00,000 is subject to company and individual performance.
+    explanation: >-
+      Part of your salary depends on performance and is not guaranteed. The total CTC may look big,
+      but you are only sure of the fixed part. Plan your money on the fixed pay.
+    explanation_hi: >-
+      आपकी सैलरी का एक हिस्सा प्रदर्शन पर निर्भर है और पक्का नहीं है। कुल CTC बड़ा दिख सकता है, पर केवल फिक्स्ड हिस्सा पक्का है।
+      अपना खर्च फिक्स्ड पे के हिसाब से तय करें।
+    explanation_kn: >-
+      ನಿಮ್ಮ ಸಂಬಳದ ಒಂದು ಭಾಗ ಕಾರ್ಯಕ್ಷಮತೆಯ ಮೇಲೆ ಅವಲಂಬಿತ, ಖಚಿತವಲ್ಲ. ಒಟ್ಟು CTC ದೊಡ್ಡದಾಗಿ ಕಾಣಬಹುದು, ಆದರೆ ಸ್ಥಿರ ಭಾಗ
+      ಮಾತ್ರ ಖಚಿತ. ನಿಮ್ಮ ಖರ್ಚನ್ನು ಸ್ಥಿರ ವೇತನದ ಆಧಾರದ ಮೇಲೆ ಯೋಜಿಸಿ.
+    triggers:
+      - 'variable\s*(pay|component|bonus|compensation|incentive|portion)'
+      - 'performance[- ](linked|based|related)\s*(pay|bonus|incentive)'
+      - '(subject to|based on|linked to)[^.]{0,40}(company|individual|business|team) performance'
+    escalate:
+      - '(sole|absolute) discretion|not guaranteed|may be (withheld|changed|modified|reduced)'
+
+  - id: O02_bond
+    name: Service bond or training-cost recovery
+    look_for: A bond, minimum service period, or money you must pay if you leave early.
+    why: Leaving early could cost you lakhs, and can trap you in a job that is not working.
+    risk: high
+    question: What exact amount would I owe if I leave in month 6, 12 or 18, and does it reduce over time?
+    example: The employee shall serve a minimum of two years, failing which Rs. 2,00,000 shall be paid.
+    explanation: >-
+      You may have to pay money if you leave before a set time. Check the amount and whether it
+      goes down each month you stay. Courts usually allow only real, reasonable training costs, but
+      a dispute is stressful. Get the details in writing before you sign.
+    explanation_hi: >-
+      तय समय से पहले नौकरी छोड़ने पर आपको पैसे देने पड़ सकते हैं। रकम देखें और क्या यह हर महीने कम होती है। अदालतें आमतौर पर
+      केवल असली और उचित ट्रेनिंग खर्च मानती हैं, पर विवाद तनाव भरा होता है। साइन करने से पहले लिखित में ब्योरा लें।
+    explanation_kn: >-
+      ನಿಗದಿತ ಸಮಯಕ್ಕೆ ಮುಂಚೆ ಕೆಲಸ ಬಿಟ್ಟರೆ ನೀವು ಹಣ ಕಟ್ಟಬೇಕಾಗಬಹುದು. ಮೊತ್ತ ಮತ್ತು ಅದು ಪ್ರತಿ ತಿಂಗಳು ಕಡಿಮೆಯಾಗುತ್ತದೆಯೇ
+      ನೋಡಿ. ನ್ಯಾಯಾಲಯಗಳು ಸಾಮಾನ್ಯವಾಗಿ ನಿಜವಾದ, ಸಮಂಜಸ ತರಬೇತಿ ವೆಚ್ಚವನ್ನು ಮಾತ್ರ ಒಪ್ಪುತ್ತವೆ, ಆದರೆ ವಿವಾದ ಒತ್ತಡದ ವಿಷಯ.
+      ಸಹಿ ಮಾಡುವ ಮುನ್ನ ವಿವರಗಳನ್ನು ಬರವಣಿಗೆಯಲ್ಲಿ ಪಡೆಯಿರಿ.
+    triggers:
+      - '\bbond\b'
+      - 'service agreement'
+      - '(training|recruitment|hiring|onboarding)\s*(cost|expense|fee)s?[^.]{0,100}(recover|refund|repa(y|id)|pay back|reimburse|liable)'
+      - 'liquidated damages'
+      - 'serve[^.]{0,40}minimum\s*(period|of)'
+      - '(pay|liable)[^.]{0,60}(training|recruitment)[^.]{0,30}(cost|expense)'
+      - '(minimum|committed?)[^.]{0,30}(service|serve|tenure)[^.]{0,30}(period|of\s*\d|of\s*(one|two|three))'
+
+  - id: O03_long_notice
+    name: Long notice period
+    look_for: Notice of 60 days or more before you can leave.
+    why: Many employers will not wait two or three months, so a long notice can cost you a new offer.
+    risk: medium
+    question: Can the notice period be reduced, and can I buy out or adjust it against leave?
+    example: Either party may terminate this employment with 90 days' notice.
+    explanation: >-
+      You must keep working for a long time after you resign. New employers often want you to
+      join sooner. Check if you can shorten it by paying, or by using your earned leave.
+    explanation_hi: >-
+      इस्तीफ़ा देने के बाद आपको लंबे समय तक काम करना होगा। नई कंपनियां अक्सर जल्दी जॉइन करवाना चाहती हैं। देखें कि क्या पैसे देकर
+      या अर्जित छुट्टी से इसे कम किया जा सकता है।
+    explanation_kn: >-
+      ರಾಜೀನಾಮೆ ನೀಡಿದ ನಂತರವೂ ನೀವು ದೀರ್ಘ ಕಾಲ ಕೆಲಸ ಮಾಡಬೇಕು. ಹೊಸ ಕಂಪನಿಗಳು ಬೇಗ ಸೇರಬೇಕೆಂದು ಬಯಸುತ್ತವೆ. ಹಣ ಕಟ್ಟಿ
+      ಅಥವಾ ಗಳಿಸಿದ ರಜೆ ಬಳಸಿ ಇದನ್ನು ಕಡಿಮೆ ಮಾಡಬಹುದೇ ನೋಡಿ.
+    triggers:
+      - '\b([2-6]|two|three|four|five|six)\s*(\(\w+\)\s*)?(calendar\s*)?months?\W{0,2}s?\s*(prior\s*|advance\s*|written\s*)*notice'
+      - '\b([6-9]\d|1\d\d)\s*(\(\w+\)\s*)?days?\W{0,2}s?\s*(prior\s*|advance\s*|written\s*)*notice'
+      - 'notice period[^.]{0,40}\b([2-6]|two|three|four|five|six)\s*(\(\w+\)\s*)?months?'
+      - 'notice period[^.]{0,40}\b([6-9]\d|1\d\d)\s*(\(\w+\)\s*)?days'
+    require:
+      - 'resign|leav|terminat|separat|\bgive\b|\bserve\b|notice period|either party|employment'
+    escalate:
+      - '\b([3-6]|three|four|five|six)\s*(\(\w+\)\s*)?months?|\b(9\d|1\d\d)\s*(\(\w+\)\s*)?days'
+
+  - id: O04_buyout
+    name: Notice buyout limits
+    look_for: Paying salary in place of notice, or the company refusing early release.
+    why: If buyout is not allowed, you cannot leave early even if you pay.
+    risk: medium
+    question: Can I pay in lieu of notice, and is the amount based on basic or gross salary?
+    example: Notice period buyout shall be at the sole discretion of the management.
+    explanation: >-
+      This clause explains if you can pay money to leave before your notice ends. Check if the
+      company can refuse, and whether the payment is on basic pay or full salary.
+    explanation_hi: >-
+      यह शर्त बताती है कि क्या आप पैसे देकर नोटिस पूरा होने से पहले जा सकते हैं। देखें कि क्या कंपनी मना कर सकती है, और रकम
+      बेसिक पे पर है या पूरी सैलरी पर।
+    explanation_kn: >-
+      ನೋಟಿಸ್ ಮುಗಿಯುವ ಮುನ್ನ ಹಣ ಕಟ್ಟಿ ಹೊರಡಬಹುದೇ ಎಂದು ಈ ಷರತ್ತು ಹೇಳುತ್ತದೆ. ಕಂಪನಿ ನಿರಾಕರಿಸಬಹುದೇ, ಮತ್ತು ಮೊತ್ತ ಮೂಲ
+      ವೇತನದ ಮೇಲೋ ಪೂರ್ಣ ಸಂಬಳದ ಮೇಲೋ ನೋಡಿ.
+    triggers:
+      - 'buy[- ]?out'
+      - 'in lieu of\s*(the\s*)?notice'
+      - 'notice pay'
+      - '(salary|pay|compensation|amount) for the (unserved|shortfall|remaining)'
+    escalate:
+      - '(sole|absolute) discretion|may (not|refuse)|not (be )?(allowed|accepted|permitted)'
+
+  - id: O05_probation
+    name: Strict probation terms
+    look_for: Long or extendable probation, or termination with little notice during probation.
+    why: During probation you can lose the job quickly, and some benefits may not apply.
+    risk: medium
+    question: What is the maximum probation, including extensions, and what notice applies during it?
+    example: The probation may be extended at the discretion of the management.
+    explanation: >-
+      During probation the company can end your job with very short notice, and it may extend
+      probation. Ask for the maximum length in writing and how you will be reviewed.
+    explanation_hi: >-
+      प्रोबेशन के दौरान कंपनी बहुत कम नोटिस पर नौकरी खत्म कर सकती है, और प्रोबेशन बढ़ा भी सकती है। अधिकतम अवधि और आपकी
+      समीक्षा कैसे होगी, यह लिखित में मांगें।
+    explanation_kn: >-
+      ಪ್ರೊಬೇಷನ್ ಸಮಯದಲ್ಲಿ ಕಂಪನಿ ಬಹಳ ಕಡಿಮೆ ನೋಟಿಸ್‌ನಲ್ಲಿ ಕೆಲಸ ಕೊನೆಗೊಳಿಸಬಹುದು ಮತ್ತು ಪ್ರೊಬೇಷನ್ ವಿಸ್ತರಿಸಬಹುದು. ಗರಿಷ್ಠ
+      ಅವಧಿ ಮತ್ತು ನಿಮ್ಮ ಮೌಲ್ಯಮಾಪನ ಹೇಗೆ ಎಂದು ಬರವಣಿಗೆಯಲ್ಲಿ ಕೇಳಿ.
+    triggers:
+      - 'probation[^.]{0,120}(extend|extension|extended)'
+      - 'probation[^.]{0,140}(terminat|discontinu)[^.]{0,80}(without|immediate|forthwith|\b([1-9]|1[0-5]|one|seven|fifteen)\s*days?)'
+      - 'probation[^.]{0,40}\b(9|12|nine|twelve)\s*(\(\w+\)\s*)?months'
+
+  - id: O06_non_compete
+    name: Non-compete after you leave
+    look_for: You cannot join competitors or clients for some time after leaving.
+    why: It can scare you away from good jobs in your own field.
+    risk: medium
+    question: Which companies and for how long does this apply after I leave? Can it be limited to while I am employed?
+    example: The employee shall not join any competitor for a period of 12 months after leaving.
+    explanation: >-
+      This clause tries to stop you from working for competitors or clients after you leave. In
+      India, a ban on working after you leave is usually hard to enforce. It can still be used to
+      pressure you, so ask for it to be narrow and short.
+    explanation_hi: >-
+      यह शर्त नौकरी छोड़ने के बाद आपको प्रतिस्पर्धी कंपनियों या क्लाइंट के साथ काम करने से रोकती है। भारत में नौकरी छोड़ने के बाद
+      काम पर रोक आमतौर पर लागू करना मुश्किल होता है। फिर भी इससे दबाव बनाया जा सकता है, इसलिए इसे सीमित और छोटा रखने को कहें।
+    explanation_kn: >-
+      ಕೆಲಸ ಬಿಟ್ಟ ನಂತರ ಪ್ರತಿಸ್ಪರ್ಧಿ ಕಂಪನಿಗಳು ಅಥವಾ ಗ್ರಾಹಕರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡದಂತೆ ಈ ಷರತ್ತು ತಡೆಯುತ್ತದೆ. ಭಾರತದಲ್ಲಿ ಕೆಲಸ
+      ಬಿಟ್ಟ ನಂತರದ ಇಂತಹ ನಿಷೇಧ ಜಾರಿಗೊಳಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿ ಕಷ್ಟ. ಆದರೂ ಒತ್ತಡ ಹಾಕಲು ಬಳಸಬಹುದು, ಆದ್ದರಿಂದ ಇದನ್ನು ಸೀಮಿತ
+      ಮತ್ತು ಕಡಿಮೆ ಅವಧಿಗೆ ಇರಿಸಲು ಕೇಳಿ.
+    triggers:
+      - 'non[- ]?compet'
+      - '(shall|will|must) not\s*(join|work for|be employed|engage)[^.]{0,100}(competitor|competing|client|customer|similar business)'
+      - 'non[- ]?solicit'
+    escalate:
+      - 'after (leaving|the termination|cessation|separation)|post[- ]employment|following (termination|separation)'
+
+  - id: O07_ip_assignment
+    name: Broad ownership of your work
+    look_for: The company owning everything you create, including outside work hours.
+    why: Personal projects, open-source work or freelancing could be claimed by the employer.
+    risk: low
+    question: Does this cover my personal projects made on my own time and equipment? Can that be excluded?
+    example: All inventions made by the employee, whether during working hours or not, shall belong to the Company.
+    explanation: >-
+      The company will own the work you create for it. That is normal. Check whether it also claims
+      things you build in your own time, like side projects or open-source code.
+    explanation_hi: >-
+      कंपनी के लिए बनाया गया आपका काम कंपनी का होगा। यह सामान्य है। देखें कि क्या यह आपके अपने समय में बनाए काम, जैसे साइड प्रोजेक्ट
+      या ओपन-सोर्स कोड, पर भी दावा करती है।
+    explanation_kn: >-
+      ಕಂಪನಿಗಾಗಿ ನೀವು ಮಾಡುವ ಕೆಲಸ ಕಂಪನಿಯದಾಗುತ್ತದೆ. ಇದು ಸಾಮಾನ್ಯ. ನಿಮ್ಮ ಸ್ವಂತ ಸಮಯದಲ್ಲಿ ಮಾಡುವ ಸೈಡ್ ಪ್ರಾಜೆಕ್ಟ್ ಅಥವಾ
+      ಓಪನ್-ಸೋರ್ಸ್ ಕೋಡ್ ಮೇಲೂ ಹಕ್ಕು ಕೇಳುತ್ತದೆಯೇ ನೋಡಿ.
+    triggers:
+      - '(intellectual property|\bip\b|inventions?|copyrights?|patents?|work product)[^.]{0,140}(belong|assign|property of|vest|exclusively own|sole owner)'
+    escalate:
+      - 'outside (of )?(the )?(working|office|business) hours|personal time|own time|whether or not|whether during'
+
+  - id: O08_relocation_clawback
+    name: Joining or relocation bonus clawback
+    look_for: Repaying a joining, relocation or retention bonus if you leave early.
+    why: A bonus that must be returned is not really yours until the period ends.
+    risk: medium
+    question: Is the repayment reduced month by month, and is it on the gross or post-tax amount?
+    example: The joining bonus shall be repaid in full if the employee leaves within 12 months.
+    explanation: >-
+      You may have to return a bonus if you leave before a set date. Check the time period and
+      whether you repay the full amount or a smaller share for the months you stayed.
+    explanation_hi: >-
+      तय तारीख से पहले छोड़ने पर बोनस लौटाना पड़ सकता है। समय अवधि देखें, और क्या पूरी रकम लौटानी है या रुके महीनों के
+      हिसाब से कम।
+    explanation_kn: >-
+      ನಿಗದಿತ ದಿನಾಂಕಕ್ಕೆ ಮುನ್ನ ಬಿಟ್ಟರೆ ಬೋನಸ್ ಹಿಂದಿರುಗಿಸಬೇಕಾಗಬಹುದು. ಅವಧಿ ನೋಡಿ, ಮತ್ತು ಪೂರ್ಣ ಮೊತ್ತವೋ ಅಥವಾ ಇದ್ದ
+      ತಿಂಗಳುಗಳ ಪ್ರಕಾರ ಕಡಿಮೆಯೋ ಎಂದು ತಿಳಿಯಿರಿ.
+    triggers:
+      - '(relocation|joining|sign[- ]?on|retention)\s*(bonus|allowance|assistance|amount)[^.]{0,140}(repa(y|id)|refund|return|recover|pay back|clawback|claw back)'
+      - '(repa(y|id)|refund|return|recover)[^.]{0,80}(relocation|joining|sign[- ]?on|retention)\s*(bonus|allowance)'
+
+  - id: O09_unilateral_change
+    name: Company can change terms alone
+    look_for: The employer may change role, location, salary structure or policies at its discretion.
+    why: The job you accept could change without your agreement.
+    risk: medium
+    question: Can transfers or changes in pay structure happen only with my written consent?
+    example: The Company reserves the right to transfer you to any location in India.
+    explanation: >-
+      The company can change parts of your job, like your city, team or pay structure, without asking
+      you. Find out how often this happens and if you can say no.
+    explanation_hi: >-
+      कंपनी बिना पूछे आपकी नौकरी के हिस्से बदल सकती है, जैसे शहर, टीम या सैलरी स्ट्रक्चर। पता करें कि ऐसा कितनी बार होता है
+      और क्या आप मना कर सकते हैं।
+    explanation_kn: >-
+      ಕಂಪನಿ ನಿಮ್ಮನ್ನು ಕೇಳದೆ ನಗರ, ತಂಡ ಅಥವಾ ವೇತನ ರಚನೆಯಂತಹ ನಿಮ್ಮ ಕೆಲಸದ ಭಾಗಗಳನ್ನು ಬದಲಿಸಬಹುದು. ಇದು ಎಷ್ಟು ಬಾರಿ
+      ಆಗುತ್ತದೆ ಮತ್ತು ನೀವು ನಿರಾಕರಿಸಬಹುದೇ ಎಂದು ತಿಳಿಯಿರಿ.
+    triggers:
+      - '(company|employer|management|organi[sz]ation)[^.]{0,60}(reserves the right|at its (sole )?discretion|shall have the right)[^.]{0,100}(change|modify|alter|amend|revise|transfer|restructure)'
+      - '(transfer(red)?|posted|deploy(ed)?|relocat(e|ed))[^.]{0,60}(any (location|office|city|place|branch|project)|anywhere)'
+    escalate:
+      - '(salary|compensation|remuneration|pay)\s*(structure|components?)'
+
+  - id: O10_offer_withdrawal
+    name: Offer can be withdrawn
+    look_for: The offer can be cancelled after background checks or at any time.
+    why: If you resign from your current job too early, a withdrawn offer leaves you with nothing.
+    risk: low
+    question: What exactly would cause the offer to be withdrawn, and when will verification be complete?
+    example: This offer may be withdrawn if the background verification is not satisfactory.
+    explanation: >-
+      The company can cancel this offer, for example after a background check. Do not resign from
+      your current job until verification is done and you have a confirmed joining date.
+    explanation_hi: >-
+      कंपनी यह ऑफर रद्द कर सकती है, जैसे बैकग्राउंड चेक के बाद। वेरिफिकेशन पूरा होने और जॉइनिंग तारीख पक्की होने तक अपनी
+      मौजूदा नौकरी से इस्तीफ़ा न दें।
+    explanation_kn: >-
+      ಕಂಪನಿ ಈ ಆಫರ್ ರದ್ದುಗೊಳಿಸಬಹುದು, ಉದಾಹರಣೆಗೆ ಹಿನ್ನೆಲೆ ಪರಿಶೀಲನೆಯ ನಂತರ. ಪರಿಶೀಲನೆ ಮುಗಿದು ಸೇರುವ ದಿನಾಂಕ ಖಚಿತವಾಗುವವರೆಗೆ
+      ಈಗಿನ ಕೆಲಸಕ್ಕೆ ರಾಜೀನಾಮೆ ನೀಡಬೇಡಿ.
+    triggers:
+      - '(background|reference|antecedent)\s*(verification|check|screening)[^.]{0,140}(withdraw|revoke|terminat|cancel|rescind)'
+      - '(offer|appointment)[^.]{0,60}(withdrawn|revoked|cancelled|canceled|rescinded)'
+
+  - id: O11_salary_confidential
+    name: Salary must be kept secret
+    look_for: Rules that you must not share your salary.
+    why: It makes it harder to know if you are paid fairly.
+    risk: low
+    question: Is there a penalty for discussing pay, and does this apply after I leave?
+    example: Your compensation details are strictly confidential and must not be discussed.
+    explanation: >-
+      You are asked to keep your salary secret. This is common. Check if breaking it can lead to
+      action against you, and ask for salary bands if you want to compare fairly.
+    explanation_hi: >-
+      आपसे सैलरी गुप्त रखने को कहा गया है। यह आम है। देखें कि तोड़ने पर आप पर कार्रवाई हो सकती है या नहीं, और तुलना के लिए
+      सैलरी बैंड पूछें।
+    explanation_kn: >-
+      ನಿಮ್ಮ ಸಂಬಳವನ್ನು ರಹಸ್ಯವಾಗಿಡಲು ಕೇಳಲಾಗಿದೆ. ಇದು ಸಾಮಾನ್ಯ. ಉಲ್ಲಂಘಿಸಿದರೆ ಕ್ರಮ ಇದೆಯೇ ನೋಡಿ, ಮತ್ತು ಹೋಲಿಸಲು ಸಂಬಳ
+      ಶ್ರೇಣಿ ಕೇಳಿ.
+    triggers:
+      - '(salary|compensation|remuneration|pay)[^.]{0,80}(strictly )?confidential'
+    escalate:
+      - 'disciplinary|terminat'
+
+  - id: O12_final_pay_deduction
+    name: Deductions from your final settlement
+    look_for: The company can recover dues or damages from your last salary or settlement.
+    why: Your final pay could be much smaller than expected, with little explanation.
+    risk: medium
+    question: Which amounts can be deducted from my full and final settlement, and will I get an itemised statement?
+    example: The Company may recover any dues from your full and final settlement.
+    explanation: >-
+      The company can cut money from your last salary or final settlement. Ask which dues can be cut
+      and ask for a written breakup when you leave.
+    explanation_hi: >-
+      कंपनी आपकी आखिरी सैलरी या फ़ाइनल सेटलमेंट से पैसे काट सकती है। कौन से बकाया कटेंगे, यह पूछें और छोड़ते समय लिखित ब्योरा मांगें।
+    explanation_kn: >-
+      ಕಂಪನಿ ನಿಮ್ಮ ಕೊನೆಯ ಸಂಬಳ ಅಥವಾ ಅಂತಿಮ ಇತ್ಯರ್ಥದಿಂದ ಹಣ ಕಡಿತ ಮಾಡಬಹುದು. ಯಾವ ಬಾಕಿಗಳನ್ನು ಕಡಿತ ಮಾಡಬಹುದು ಎಂದು ಕೇಳಿ,
+      ಹೊರಡುವಾಗ ಲಿಖಿತ ವಿವರ ಕೇಳಿ.
+    triggers:
+      - '(recover|deduct|adjust)[^.]{0,80}(full and final|final settlement|f\s?&\s?f|last salary|final salary|dues)'
+
+expected:
+  - id: E_O01_ctc_breakup
+    name: Salary breakup (fixed, variable, deductions)
+    why: Without a breakup you cannot work out your monthly in-hand pay.
+    question: Can you share the full salary breakup, including fixed pay, variable pay, PF and gratuity?
+    present:
+      - 'annexure|break[- ]?up|breakdown|components?|\bbasic\b'
+  - id: E_O02_joining_date
+    name: Joining date
+    why: A fixed date protects you when you plan your resignation and move.
+    question: What is my confirmed date of joining?
+    present:
+      - 'date of joining|joining date|join (on|by|us on)|commence(ment)? (of )?(your )?(employment|duties)|start date'
+  - id: E_O03_probation
+    name: Probation terms
+    why: You should know how long probation lasts and what changes after it.
+    question: How long is probation, and what notice applies during it?
+    present:
+      - 'probation'
+  - id: E_O04_notice
+    name: Notice period
+    why: You need to know how much notice you must give if you want to leave.
+    question: What is the notice period during and after probation?
+    present:
+      - '\bnotice\b'
+  - id: E_O05_leave
+    name: Leave policy
+    why: Leave affects your rest, and leave balance can sometimes be adjusted against notice.
+    question: How many paid leaves and holidays do I get each year?
+    present:
+      - '\bleaves?\b|holidays?|paid time off|\bpto\b'
+  - id: E_O06_location_hours
+    name: Work location and working hours
+    why: Location and hours decide where you live and how much time the job takes.
+    question: Where will I work, what are the working hours, and is remote or hybrid work allowed?
+    present:
+      - 'location|place of (work|posting)|based (at|in|out of)|working hours|work hours'

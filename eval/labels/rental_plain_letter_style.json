@@ -1,0 +1,40 @@
+{
+  "document": "rental_plain_letter_style.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "This agreement is made between Mrs. Lata Iyer, the owner of ",
+      "labels": []
+    },
+    {
+      "clause_start": "The tenant will pay a monthly rent of Rs. 9,500 by the 5th o",
+      "labels": []
+    },
+    {
+      "clause_start": "The owner can increase the rent whenever he wants after info",
+      "labels": [
+        "R07_rent_increase"
+      ]
+    },
+    {
+      "clause_start": "The tenant must look after all maintenance of the house, inc",
+      "labels": [
+        "R08_repairs_on_tenant"
+      ]
+    },
+    {
+      "clause_start": "If the tenant wishes to leave, he must give two months notic",
+      "labels": [
+        "R05_long_notice",
+        "R12_late_fee"
+      ]
+    },
+    {
+      "clause_start": "The owner may disconnect the water and electricity supply if",
+      "labels": [
+        "R06_eviction"
+      ]
+    }
+  ]
+}

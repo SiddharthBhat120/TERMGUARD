@@ -1,0 +1,43 @@
+{
+  "document": "rental_pg_hostel_rules.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "The Resident shall pay Rs. 14,500 per month towards rent and",
+      "labels": []
+    },
+    {
+      "clause_start": "An advance of Rs. 29,000 has been collected. The advance is ",
+      "labels": [
+        "R02_deposit_forfeit",
+        "R04_lock_in"
+      ]
+    },
+    {
+      "clause_start": "Guests and visitors are not permitted inside the rooms. Resi",
+      "labels": [
+        "R09_usage_restrictions"
+      ]
+    },
+    {
+      "clause_start": "The Resident must inform the Owner 60 days in advance before",
+      "labels": [
+        "R05_long_notice",
+        "R10_exit_charges"
+      ]
+    },
+    {
+      "clause_start": "The Owner may ask the Resident to vacate immediately in case",
+      "labels": [
+        "R06_eviction"
+      ]
+    },
+    {
+      "clause_start": "The Owner may revise the monthly charges from time to time a",
+      "labels": [
+        "R07_rent_increase"
+      ]
+    }
+  ]
+}

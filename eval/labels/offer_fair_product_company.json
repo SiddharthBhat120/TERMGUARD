@@ -1,0 +1,33 @@
+{
+  "document": "offer_fair_product_company.pdf",
+  "kind": "offer_letter",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "Your annual CTC is Rs. 8,40,000, made up of a fixed salary o",
+      "labels": []
+    },
+    {
+      "clause_start": "Your joining date is 4 January 2027. You will work from our ",
+      "labels": []
+    },
+    {
+      "clause_start": "You will be on probation for three months. During probation,",
+      "labels": []
+    },
+    {
+      "clause_start": "After probation, the notice period is 30 days for either sid",
+      "labels": []
+    },
+    {
+      "clause_start": "You will receive 24 days of paid leave per year in addition ",
+      "labels": []
+    },
+    {
+      "clause_start": "Work you create in the course of your employment and using c",
+      "labels": [
+        "O07_ip_assignment"
+      ]
+    }
+  ]
+}

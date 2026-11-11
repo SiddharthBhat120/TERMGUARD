@@ -1,0 +1,37 @@
+{
+  "document": "offer_sales_variable_heavy.pdf",
+  "kind": "offer_letter",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "Your CTC will be Rs. 5,00,000 per annum, of which Rs. 2,40,0",
+      "labels": [
+        "O01_variable_pay"
+      ]
+    },
+    {
+      "clause_start": "For a period of 12 months after leaving the Company, you sha",
+      "labels": [
+        "O06_non_compete"
+      ]
+    },
+    {
+      "clause_start": "The Company reserves the right to modify your role, targets ",
+      "labels": [
+        "O09_unilateral_change"
+      ]
+    },
+    {
+      "clause_start": "You must give one month's notice. Any dues, including unreco",
+      "labels": [
+        "O12_final_pay_deduction"
+      ]
+    },
+    {
+      "clause_start": "A joining bonus of Rs. 30,000 is payable with your first sal",
+      "labels": [
+        "O08_relocation_clawback"
+      ]
+    }
+  ]
+}

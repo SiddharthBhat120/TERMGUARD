@@ -1,0 +1,45 @@
+{
+  "document": "rental_fair_model.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "The tenancy is for a period of twelve months starting 1 Augu",
+      "labels": []
+    },
+    {
+      "clause_start": "The monthly rent is Rs. 12,000, payable on or before the 10t",
+      "labels": []
+    },
+    {
+      "clause_start": "The Tenant shall pay a security deposit of Rs. 24,000, equal",
+      "labels": []
+    },
+    {
+      "clause_start": "The rent may be revised once every twelve months by not more",
+      "labels": [
+        "R07_rent_increase"
+      ]
+    },
+    {
+      "clause_start": "The Landlord shall carry out structural repairs, whitewashin",
+      "labels": []
+    },
+    {
+      "clause_start": "The Landlord may enter the premises for inspection or repair",
+      "labels": []
+    },
+    {
+      "clause_start": "Either party may end this agreement by giving one month's wr",
+      "labels": []
+    },
+    {
+      "clause_start": "A list of fittings and their condition, signed by both parti",
+      "labels": []
+    },
+    {
+      "clause_start": "This agreement shall be executed on e-stamp paper and regist",
+      "labels": []
+    }
+  ]
+}

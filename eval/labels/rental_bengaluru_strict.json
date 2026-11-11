@@ -1,0 +1,69 @@
+{
+  "document": "rental_bengaluru_strict.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "The Owner agrees to let out the residential flat at No. 7, 2",
+      "labels": []
+    },
+    {
+      "clause_start": "The tenancy shall be for a period of 11 (eleven) months comm",
+      "labels": []
+    },
+    {
+      "clause_start": "The Tenant shall pay a monthly rent of Rs. 18,000/- (Rupees ",
+      "labels": []
+    },
+    {
+      "clause_start": "The Tenant has paid a sum of Rs. 1,80,000/- being ten months",
+      "labels": [
+        "R01_deposit_high",
+        "R02_deposit_forfeit"
+      ]
+    },
+    {
+      "clause_start": "At the time of vacating, the Owner shall be entitled to dedu",
+      "labels": [
+        "R03_vague_deductions"
+      ]
+    },
+    {
+      "clause_start": "There shall be a lock-in period of 11 months. If the Tenant ",
+      "labels": [
+        "R04_lock_in"
+      ]
+    },
+    {
+      "clause_start": "The Tenant shall give three months' written notice before va",
+      "labels": [
+        "R05_long_notice",
+        "R06_eviction"
+      ]
+    },
+    {
+      "clause_start": "All repairs of whatever nature, including plumbing and elect",
+      "labels": [
+        "R08_repairs_on_tenant"
+      ]
+    },
+    {
+      "clause_start": "One month's rent shall be deducted towards painting charges ",
+      "labels": [
+        "R10_exit_charges"
+      ]
+    },
+    {
+      "clause_start": "The Owner or his agents shall have the right to enter and in",
+      "labels": [
+        "R11_entry_without_notice"
+      ]
+    },
+    {
+      "clause_start": "The premises shall be used for residential purposes only. No",
+      "labels": [
+        "R09_usage_restrictions"
+      ]
+    }
+  ]
+}

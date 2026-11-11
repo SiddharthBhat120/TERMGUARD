@@ -1,0 +1,21 @@
+# Secrets and private documents
+.env
+samples/private/
+uploads/
+data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+frontend/node_modules/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

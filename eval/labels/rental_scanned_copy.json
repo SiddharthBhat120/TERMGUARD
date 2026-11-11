@@ -1,0 +1,35 @@
+{
+  "document": "rental_scanned_copy.pdf",
+  "kind": "rental",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "The Tenant shall pay a monthly rent of Rs. 11,000 on or befo",
+      "labels": []
+    },
+    {
+      "clause_start": "The Tenant shall pay a security deposit equal to six months ",
+      "labels": [
+        "R01_deposit_high",
+        "R02_deposit_forfeit",
+        "R04_lock_in"
+      ]
+    },
+    {
+      "clause_start": "The Tenant shall give three months prior notice before vacat",
+      "labels": [
+        "R05_long_notice"
+      ]
+    },
+    {
+      "clause_start": "The Tenant shall bear the cost of all repairs to the house.",
+      "labels": [
+        "R08_repairs_on_tenant"
+      ]
+    },
+    {
+      "clause_start": "No pets are allowed in the premises.",
+      "labels": []
+    }
+  ]
+}

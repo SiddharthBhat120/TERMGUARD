@@ -1,0 +1,39 @@
+{
+  "document": "offer_internship_ppo.pdf",
+  "kind": "offer_letter",
+  "labelled_by": "seed (synthetic sample)",
+  "clauses": [
+    {
+      "clause_start": "You will receive a stipend of Rs. 20,000 per month during th",
+      "labels": []
+    },
+    {
+      "clause_start": "On successful completion, you will be offered a full-time ro",
+      "labels": [
+        "O05_probation"
+      ]
+    },
+    {
+      "clause_start": "All inventions, code and work product created by you, whethe",
+      "labels": [
+        "O07_ip_assignment"
+      ]
+    },
+    {
+      "clause_start": "Interns may leave with 15 days' notice. Full-time employees ",
+      "labels": [
+        "O03_long_notice"
+      ]
+    },
+    {
+      "clause_start": "You shall not solicit any client or employee of the Company ",
+      "labels": [
+        "O06_non_compete"
+      ]
+    },
+    {
+      "clause_start": "Interns get one day of leave per month. Holidays follow the ",
+      "labels": []
+    }
+  ]
+}
