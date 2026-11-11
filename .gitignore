@@ -1,6 +1,7 @@
 # Secrets and private documents
 .env
-samples/private/
+samples/private/*
+!samples/private/README.md
 uploads/
 data/
 
