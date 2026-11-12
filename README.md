@@ -138,4 +138,4 @@ TermGuard gives general information, not legal advice. For an eviction notice, a
 
 ---
 
-Built by [Siddharth Bhat](https://github.com/SiddharthBhat120).
+Built by [Siddharth Bhat](https://github.com/sidxcodes).
